@@ -1,0 +1,86 @@
+{
+    "meals":[
+        {
+            "title":"Pesto Chicken Pasta",
+            "ingredient": [
+                "chicken",
+                "pasta"
+            ],
+            "img":"https://gimmedelicious.com/wp-content/uploads/2016/10/pestopasta-10-of-12.jpg",
+            "instructionsAndTime":[
+                {
+                    "instruction":"rinse chicken",
+                    "time":"30",
+                    "ready":false
+                    
+                },
+                {
+                    "instruction":"dice chicken",
+                    "time":"27",
+                    "ready":false
+
+                },
+                {
+                    "instruction":"fry chicken",
+                    "time":"25",
+                    "ready":false
+
+                },
+                {
+                    "instruction":"serve chicken",
+                    "time":"22",
+                    "ready":false
+
+                }
+
+            ]
+                       
+        },{
+            "title":"Hunters Chicken",
+            "ingredient": [
+                        "chicken",
+                        "bacon"
+                    ],
+            "img":"https://www.hazeldines.co.uk/wp-content/uploads/2015/07/bigstock-Chicken-Bacon-6250703-2-1.jpg",
+            "instructionsAndTime":[
+                        {
+                            "instruction":"rinse chicken",
+                            "time":"20",
+                            "ready":false
+
+                        },
+                        {
+                            "instruction":"dice chicken",
+                            "time":"18",
+                            "ready":false
+
+                        },
+                        {
+                            "instruction":"fry chicken",
+                            "time":"13",
+                            "ready":false
+
+                        },
+                        {
+                            "instruction":"serve chicken",
+                            "time":"78",
+                            "ready":false
+
+                        },
+                        {
+                            "instruction":"put bacon in oven",
+                            "time":"17",
+                            "ready":false
+
+                        },
+                        {
+                            "instruction":"eat bacon before ",
+                            "time":"9",
+                            "ready":false
+
+                        }
+
+                    ]
+                }
+            ]
+}
