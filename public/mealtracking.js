@@ -170,7 +170,7 @@ topDiv.style.margin = "auto";
 var bottomDiv = document.getElementById("bottom");
 bottomDiv.style.width = "100%";
 bottomDiv.style.height = "100px";
-bottomDiv.style.background = "red";
+bottomDiv.style.background = "#8BED67";
 var p = document.createElement("p");
 
 
@@ -188,9 +188,9 @@ function timer(){
         newPercentage = 100;
     }
     console.log("new Percentage: "+newPercentage)
-    p.innerHTML = "Progress: "+newPercentage+"%";
+    p.innerHTML = "Progress: "+(100-newPercentage)+"%";
     topDiv.appendChild(p);
-    setDivWidth(newPercentage)
+    setDivWidth((100-newPercentage))
     
 }
 
@@ -232,7 +232,7 @@ function mealCompleted(){
             location.href = "./index.html"
         })
         
-        h1.innerHTML = "Your Meal Is Completed";
+        h1.innerHTML = "BON APPETIT";
         div.appendChild(h1);
         div.appendChild(button);
     }
