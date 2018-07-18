@@ -49,3 +49,7 @@ body {
     background: #fff;
     color: #333333;
   }
+  
+  #center{
+    margin: auto;
+  }
