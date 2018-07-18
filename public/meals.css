@@ -12,18 +12,16 @@ body {
 .mealDivs{
 
     padding: 2em;
-
     border-bottom: 3px solid #333333;
-    
-
 }
+
 .mealButton {
     display: inline-block;
     background:#70BDD5;
     color:#fff;
     text-decoration:none;
     padding:1em 2em;
-    border: 1px solid #fff;
+    border: 3px solid #fff;
     margin: .5em 0;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1em;
