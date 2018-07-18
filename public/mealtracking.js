@@ -32,6 +32,8 @@ function pauseAudio1() {
 } 
 
 
+
+
 //////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////FUNCTION TO DISPLAY A SINGLE MEAL////////////////////////////////////
 function displaySingleMeal(data){
@@ -62,10 +64,13 @@ function displaySingleMeal(data){
         divInstructions.appendChild(p);
         count++;
     }
+
     //////////////////
     dataHolder = data
     //////////////////
     // check(data.instructionsAndTime)
+    timer();
+
 
     h1Title.innerHTML = data.title;
     pCookingTime.innerHTML = "Cooking Time: "+time+" minutes";
@@ -99,26 +104,30 @@ function turnInstructionTimesToDateObjs(data,date){
     data.time = newDate;
 }
 
-function check(data){
-    for(let obj of data){
-        console.log(obj);
-    }
+// function check(data){
+//     for(let obj of data){
+//         console.log(obj);
+//     }
 
-}
+// }
 
 function checkingTime(){
-        if(dateMeal <= new Date() && dateMealReady == false){
-            dateMealReady = confirm("We need to eat now");
-        }
+        // if(dateMeal <= new Date() && dateMealReady == false){
+        //     dateMealReady = confirm("We need to eat now");
+        // }
 
         for(let ingredientAndTimeObj of dataHolder.instructionsAndTime){
             if(ingredientAndTimeObj.time<= new Date() && ingredientAndTimeObj.ready == false){
+                document.getElementById("waitingGif").style.display = "none";
                 playAudio1();
                 let divAlert = document.getElementById("Alert");
                 divAlert.innerHTML= "";
                 let div = document.createElement("div");
+
+                div.id = "instructionDiv"
                 let p = document.createElement("p");
                 let btnOK = document.createElement("button");
+                btnOK.id = "buttonOk"
                 btnOK.innerHTML = "OK"
                 btnOK.addEventListener("click",()=>{
                     pauseAudio1();
@@ -127,6 +136,7 @@ function checkingTime(){
                     
                 })
                 let btnCancel = document.createElement("button");
+                btnCancel.id = "buttonCancel"
                 btnCancel.innerHTML = "CANCEL"
                 btnCancel.addEventListener("click",()=>{
                     pauseAudio1();
@@ -138,18 +148,98 @@ function checkingTime(){
                 div.appendChild(btnOK);
                 div.appendChild(btnCancel);
                 divAlert.appendChild(div); 
-                // ingredientAndTimeObj.ready = confirm("We need to start cooking "+ ingredientAndTimeObj.instruction);
                 console.log("ingredient "+ingredientAndTimeObj.time);
             }
+            document.getElementById("waitingGif").style.display = "block";
+
 
     }
     
-    console.log("Meal is at:"+dateMeal);
+    
+    // console.log("Meal is at:"+dateMeal);
     console.log(new Date());
 
 }
 
 
-setInterval(checkingTime,5000); 
+var topDiv = document.getElementById("top");
+topDiv.style.width = "400px";
+topDiv.style.height = "100px";
+topDiv.style.background = "black";
+topDiv.style.margin = "auto";
+var bottomDiv = document.getElementById("bottom");
+bottomDiv.style.width = "100%";
+bottomDiv.style.height = "100px";
+bottomDiv.style.background = "red";
+var p = document.createElement("p");
+
+
+function timer(){
+    p.innerHTML = "";
+    let lastStep = dataHolder.instructionsAndTime[0].time;
+    let firstStep = dataHolder.instructionsAndTime[dataHolder.instructionsAndTime.length-1].time;
+    let difference = lastStep-firstStep;
+    console.log(difference)
+    let newPercentage = Math.round(((lastStep-(new Date()))/difference)*100);
+    if(newPercentage <=0){
+        newPercentage = 0;
+    }
+    if(newPercentage>100){
+        newPercentage = 100;
+    }
+    console.log("new Percentage: "+newPercentage)
+    p.innerHTML = "Progress: "+newPercentage+"%";
+    topDiv.appendChild(p);
+    setDivWidth(newPercentage)
+    
+}
+
+
+setInterval(timer,1000); 
+
+function setDivWidth(num){
+    bottomDiv.style.width = num+"%";
+
+}
+
+function upDateInstruction(){
+    mealCompleted();
+    for(let i=dataHolder.instructionsAndTime.length-1; i>=0 ; i--){
+        if(dataHolder.instructionsAndTime[i].time > new Date()){
+            let p = document.getElementById("instructionAndDate");
+            p.innerHTML = "";
+            let timeOfNextInstruction = dataHolder.instructionsAndTime[i].time.toString().split(" ")[4];
+            p.innerHTML = "Next Instruction: "+dataHolder.instructionsAndTime[i].instruction+"<br>Time: "+timeOfNextInstruction;
+            break;
+        }
+    }
+}
+
+function mealCompleted(){
+
+    if(dataHolder.instructionsAndTime[0].time <= new Date()){
+        document.getElementById("mechWar").style.display = "none";
+        
+        let div = document.getElementById("desmond");
+        div.innerHTML = "";
+        
+        let h1 = document.createElement("h1");
+        let button = document.createElement("button");
+        
+        button.id="goHome";
+        button.innerHTML = "HOME";
+        button.addEventListener("click",()=>{
+            location.href = "./index.html"
+        })
+        
+        h1.innerHTML = "Your Meal Is Completed";
+        div.appendChild(h1);
+        div.appendChild(button);
+    }
+}
+
+setInterval(upDateInstruction,2000)
+
+setInterval(checkingTime,2000); 
 
 

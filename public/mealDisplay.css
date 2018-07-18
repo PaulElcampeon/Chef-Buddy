@@ -1,0 +1,52 @@
+body {
+    margin:0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif,Helvetica,Sans-serif;
+    background:#70BDD5;
+    color:#fff;
+    font-size:1.1em;
+    line-height:1.5;
+    text-align:center;
+    }
+
+
+    .btn1 {
+        display: inline-block;
+        background:#70BDD5;
+        color:#fff;
+        text-decoration:none;
+        padding:1em 2em;
+        border: 1px solid #fff;
+        margin: .5em 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1em;
+       
+      }
+      
+      #orderIngredients{
+        display: inline-block;
+        background:#70BDD5;
+        color:#fff;
+        text-decoration:none;
+        padding:1em 2em;
+        border: 1px solid #fff;
+        margin: .5em 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1em;
+        padding: 0.5em;
+      }
+    
+      .btn1:hover{
+       background: #fff;
+       color: #333333;
+       
+      }
+    #orderIngredients:hover{
+        background: #fff;
+        color: #333333;
+       }
+    
+      .mealImage {
+       width: 200px;
+       height: 200px;
+      }
+    

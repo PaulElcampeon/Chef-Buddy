@@ -1,5 +1,72 @@
+
+body {
+    margin:0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif,Helvetica,Sans-serif;
+    background:#70BDD5;
+    color:#fff;
+    font-size:1.1em;
+    line-height:1.5;
+    text-align:center;
+    }
+
 #Alert{
-    width:400px;
-    height:500px;
-    background-color: beige;
+    /* width:400px;
+    height:500px; */
+    margin: auto; 
+    background: #70BDD5;
+    /* background-color: beige; */
 }
+
+#instructionDiv{
+    color: #fff;
+    padding: 1em;
+    font-size: 2em;
+
+}
+#buttonOk {
+    display: inline-block;
+    background:#8BED67;
+    color:#fff;
+    text-decoration:none;
+    padding:1em 2em;
+    border: 1px solid #fff;
+    margin: .5em 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    padding: 0.5em;
+    margin-right: 10px;
+  }
+
+#buttonCancel{
+
+    display: inline-block;
+    background:#F46262;
+    color:#fff;
+    text-decoration:none;
+    padding:1em 2em;
+    border: 1px solid #fff;
+    margin: .5em 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    padding: 0.5em;
+  }
+
+
+#goHome{ 
+    display: inline-block;
+    background:#70BDD5;
+    color:#fff;
+    text-decoration:none;
+    padding:1em 2em;
+    border: 1px solid #fff;
+    margin: .5em 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    margin-right: 10px;
+}
+
+#goHome:hover{
+    background: #fff;
+    color: #333333;
+    
+   }

@@ -23,33 +23,35 @@ function displayMeals(data){
     let div = document.getElementById("allMealDisplayer");
     for(let meal of data){
         let tempDiv = document.createElement("div");
-        let pTitle = document.createElement("p");
+        let pTitle = document.createElement("h2");
         let pCookingTime = document.createElement("p");
         let btnDetails = document.createElement("button");
         let img = document.createElement("img");
-        
-        img.src=meal.img;
-        img.style.width="100px";
-        img.style.height="100px";
 
+        let break2 = document.createElement('br');
+        img.className = 'mealImage';
+        img.src=meal.img;
+        
 
         let time = getGreatestTime(meal.instructionsAndTime);
         
         pCookingTime.innerHTML = "Cooking Time: "+time+" minutes";
         
-        pTitle.innerHTML = "Title: "+meal.title;
+        pTitle.innerHTML = meal.title;
         
         btnDetails.innerHTML = "Details";
         btnDetails.addEventListener("click",()=>{
             sessionStorage.setItem("meal", JSON.stringify(meal));
             location.href = './mealdisplay.html'
         })
-
+        btnDetails.className = 'mealButton'
+        tempDiv.className = 'mealDivs' 
         //////////////////////////////////////////////////////////////////////////////////////////////////
         /////////////////////////////APPENDING ELEMENTS TO THE DIV////////////////////////////////////////
         tempDiv.appendChild(pTitle);
         tempDiv.appendChild(pCookingTime);
         tempDiv.appendChild(img);
+        tempDiv.appendChild(break2)
         tempDiv.appendChild(btnDetails);
         div.appendChild(tempDiv);
     }

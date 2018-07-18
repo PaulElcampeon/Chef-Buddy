@@ -1,0 +1,51 @@
+body {
+    margin:0;
+    font-family:Arial,Helvetica,Sans-serif;
+    background:#70BDD5;
+    color:#fff;
+    font-size:1.1em;
+    line-height:1.5;
+    text-align:center;
+    }
+  #readyToCook {
+    display: inline-block;
+    background:#70BDD5;
+    color:#fff;
+    text-decoration:none;
+    padding:1em 2em;
+    border: 1px solid #fff;
+    margin: .5em 0;
+    margin-top: 250px;
+    font-size: 1.1em;
+    
+  }
+  #readyToCook:hover{
+    background: #fff;
+    color: #333333;
+  }
+  #logoHolder{
+    width: 500px; 
+    height: 300px 
+  }
+  h1 {
+    
+    margin: 0;
+    padding: 1em 0;
+  }
+
+  #createMeal{
+    display: inline-block;
+    background:#70BDD5;
+    color:#fff;
+    text-decoration:none;
+    padding:1em 2em;
+    border: 1px solid #fff;
+    margin: .5em 0;
+    margin-top: 250px;
+    font-size: 1.1em;
+  }
+
+  #createMeal:hover{
+    background: #fff;
+    color: #333333;
+  }

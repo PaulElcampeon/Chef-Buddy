@@ -6,7 +6,7 @@ if (document.readyState !== 'loading') {
 
 function ready () {
     displaySingleMeal(JSON.parse(sessionStorage.getItem("meal")));
-    sessionStorage.removeItem("meal")
+    // sessionStorage.removeItem("meal")
 }
 
 var Ingredients;
@@ -17,8 +17,14 @@ function displaySingleMeal(data){
     Ingredients = data.ingredient
     let divSingleMeal = document.getElementById("singleMealDisplayer"); 
     divSingleMeal.innerHTML = "";
+    let divImg = document.createElement("div")
+    // divImg.style.width = "100px";
+    // divImg.style.height = "100px";
+
+    // divImg.style.backgroundImage = "url('"+data.img+"')"
     let pTitle = document.createElement("p");
     let acceptBtn = document.createElement("button");
+    let breakLine = document.createElement("br")
     let pCookingTime = document.createElement("p");
     let img = document.createElement("img");
     let h3Ingredient = document.createElement("h3");
@@ -37,12 +43,22 @@ function displaySingleMeal(data){
     //////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////DISPLAYING EACH INSTRUCTION/////////////////////////////////////
     let count=1;
-    for(let instrucionObj of data.instructionsAndTime){
+
+    for(let i = data.instructionsAndTime.length-1; i>=0; i--){
         let p = document.createElement("p");
-        p.innerHTML = count+": "+instrucionObj.instruction;
+        p.innerHTML = count+": "+data.instructionsAndTime[i].instruction;
         divInstructions.appendChild(p);
         count++;
     }
+
+    // }
+    // for(let instrucionObj of data.instructionsAndTime){
+    //     let p = document.createElement("p");
+    //     p.innerHTML = count+": "+instrucionObj.instruction;
+    //     divInstructions.appendChild(p);
+    //     count++;
+    // }
+    acceptBtn.className = "btn1"
     pTitle.innerHTML = data.title;
     acceptBtn.innerHTML = "ACCEPT";
     acceptBtn.addEventListener("click",()=>{
@@ -53,15 +69,32 @@ function displaySingleMeal(data){
     let time = getGreatestTime(data.instructionsAndTime);        
     pCookingTime.innerHTML = "Cooking Time: "+time+" minutes";
     img.src = data.img;
-    img.style.width = "100px";
-    img.style.height = "100px";
+    img.style.width = "350px";
+    img.style.height = "250px";
     h3Ingredient.innerHTML = "Ingredients";
     h3Instructions.innerHTML = "Instructions";
 
     //////////////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////APPENDING ELEMENTS TO THE DIV////////////////////////////////////////
-    divSingleMeal.appendChild(pTitle);
-    divSingleMeal.appendChild(img);
+    divImg.style.marginTop = "50px";
+    divImg.appendChild(pTitle);
+    divImg.appendChild(img)
+    divImg.style.textAlign = "center";
+    divImg.style.position = "relative";
+    pTitle.style.position = "absolute";
+    pTitle.style.top ="40%";
+    pTitle.style.left ="50%";
+    pTitle.style.transform = "translate(-50%, -50%)";
+    pTitle.style.fontSize = "2em";
+    pTitle.style.fontWeight = "bold";
+    pTitle.style.textShadow = "#474747 3px 5px 2px";
+
+
+
+    // divSingleMeal.appendChild(img);
+    divSingleMeal.appendChild(divImg);
+
+    divSingleMeal.appendChild(breakLine);
     divSingleMeal.appendChild(acceptBtn);
     divSingleMeal.appendChild(pCookingTime);
     divSingleMeal.appendChild(h3Ingredient);
@@ -113,13 +146,11 @@ function displayProducts(data){
 }
 
 function displayTotal(price){
-
-    // productContainer.removeChild("h2")
-    // let h2 = document.createElement("h2");
     let h2 = document.getElementById("totalPrice");
     h2.innerHTML="";
-    h2.innerHTML = "Total Price: "+price+" <br> Your Order will be with you shortly";
-    // productContainer.appendChild(h2);
+    let roundedPrice = price.toFixed(2);
+    h2.innerHTML = "Total Price: £"+roundedPrice+" <br> Your Order will be with you shortly";
+    document.getElementById("orderIngredients").style.visibility = "hidden";
 }
 
 document.getElementById("orderIngredients").addEventListener("click",()=>{
@@ -128,7 +159,7 @@ document.getElementById("orderIngredients").addEventListener("click",()=>{
     for(let ingredient of Ingredients){
         getProduct(ingredient);
     }
-    displayTotal();
+    // displayTotal();
 
 })
 

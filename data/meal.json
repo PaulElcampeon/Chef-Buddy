@@ -1,86 +1,50 @@
 {
-    "meals":[
+    "meals": [
         {
-            "title":"Pesto Chicken Pasta",
+            "title": "Roast",
             "ingredient": [
-                "chicken",
-                "pasta"
+                "Chicken",
+                "Potatoe",
+                "Gravy"
             ],
-            "img":"https://gimmedelicious.com/wp-content/uploads/2016/10/pestopasta-10-of-12.jpg",
-            "instructionsAndTime":[
+            "img": "https://img.bestrecipes.com.au/2SOaKRJn/h450-w650-cscale-1494288974/br-api/asset/7319/slow-roasted-leg-of-lamb.jpg",
+            "instructionsAndTime": [
                 {
-                    "instruction":"rinse chicken",
-                    "time":"30",
-                    "ready":false
-                    
+                    "instruction": "Season chicken",
+                    "time": 60,
+                    "ready": false
                 },
                 {
-                    "instruction":"dice chicken",
-                    "time":"27",
-                    "ready":false
-
+                    "instruction": "put chicken in the oven",
+                    "time": 50,
+                    "ready": false
                 },
                 {
-                    "instruction":"fry chicken",
-                    "time":"25",
-                    "ready":false
-
+                    "instruction": "Season potatoes",
+                    "time": 45,
+                    "ready": false
                 },
                 {
-                    "instruction":"serve chicken",
-                    "time":"22",
-                    "ready":false
-
-                }
-
-            ]
-                       
-        },{
-            "title":"Hunters Chicken",
-            "ingredient": [
-                        "chicken",
-                        "bacon"
-                    ],
-            "img":"https://www.hazeldines.co.uk/wp-content/uploads/2015/07/bigstock-Chicken-Bacon-6250703-2-1.jpg",
-            "instructionsAndTime":[
-                        {
-                            "instruction":"rinse chicken",
-                            "time":"20",
-                            "ready":false
-
-                        },
-                        {
-                            "instruction":"dice chicken",
-                            "time":"18",
-                            "ready":false
-
-                        },
-                        {
-                            "instruction":"fry chicken",
-                            "time":"13",
-                            "ready":false
-
-                        },
-                        {
-                            "instruction":"serve chicken",
-                            "time":"78",
-                            "ready":false
-
-                        },
-                        {
-                            "instruction":"put bacon in oven",
-                            "time":"17",
-                            "ready":false
-
-                        },
-                        {
-                            "instruction":"eat bacon before ",
-                            "time":"9",
-                            "ready":false
-
-                        }
-
-                    ]
+                    "instruction": "Put potato in oven",
+                    "time": 35,
+                    "ready": false
+                },
+                {
+                    "instruction": "Make gravy",
+                    "time": 15,
+                    "ready": false
+                },
+                {
+                    "instruction": "Take potatoe and chciken out of oven",
+                    "time": 5,
+                    "ready": false
+                },
+                {
+                    "instruction": "Serve Roast",
+                    "time": 0,
+                    "ready": false
                 }
             ]
+        }
+    ]
 }
