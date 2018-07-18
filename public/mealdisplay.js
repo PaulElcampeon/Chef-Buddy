@@ -149,7 +149,7 @@ function displayTotal(price){
     let h2 = document.getElementById("totalPrice");
     h2.innerHTML="";
     let roundedPrice = price.toFixed(2);
-    h2.innerHTML = "Total Price: £"+roundedPrice+" <br> Your Order will be with you shortly";
+    h2.innerHTML = "Total Price: £"+roundedPrice+" <br> Add to shopping basket";
     document.getElementById("orderIngredients").style.visibility = "hidden";
 }
 
