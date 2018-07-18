@@ -5,15 +5,16 @@ const formidable = require('express-formidable');
 app.use(express.static("public"));
 app.use(formidable());
 
-var meals = require("./models/meals")
+// var meals = require("./models/meals")
 
+app.set("port",(process.env.PORT || 3000))
 
-app.listen(3000,()=>{
-    console.log("Waiting on requests from port 3000");
+app.listen(app.get("port"),()=>{
+    console.log("Node app is running on port",app.get("port"));
 })
 
 app.get("/",(request,response)=>{
-    // response.status(200).sendFile("index.html",{root: __dirname+"/public"});
+    response.status(200).sendFile("index.html",{root: __dirname+"/public"});
 })
 
 
