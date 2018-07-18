@@ -1,1 +1,1 @@
-web: node des.js
+web: node server.js
