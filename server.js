@@ -75,7 +75,8 @@ app.post("/meal",(request,response)=>{
 
 
 app.post("/search",(request,response)=>{
-    let tag = request.query.tag;
+    let tag = request.query.tag.toLowerCase();
+
     if(tag.length>0){
         console.log(tag);
         let jsonfile = fs.readFileSync("./data/meal.json","utf-8");
