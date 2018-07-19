@@ -8,6 +8,15 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="searchDiv">
+        <form id="search" action="/search" Method="POST">
+            <input id="searchInput" placeholder="search" name="tag" type="text" onkeypress="return runScript(event)" />
+        </form>
+    </div>
+    <br>
+    <div id="noResultsDiv">
+
+    </div>
     <div id="allMealDisplayer"></div>
 
     

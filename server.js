@@ -35,6 +35,9 @@ app.get("/meals",(request,response)=>{
 app.post("/meal",(request,response)=>{
     let title = request.fields.title;
     let ingredients = request.fields.ingredients.split(",");
+    for(let i=0;i<ingredients.length; i++){
+        ingredients[i] = ingredients[i].trim();
+    }
     let img = request.fields.img;
     let instructionsArr = [];
  
@@ -69,3 +72,31 @@ app.post("/meal",(request,response)=>{
 
     response.status(201).sendFile("congratulations.html",{root:__dirname+"/public"});
 })
+
+
+app.post("/search",(request,response)=>{
+    let tag = request.query.tag;
+    if(tag.length>0){
+        console.log(tag);
+        let jsonfile = fs.readFileSync("./data/meal.json","utf-8");
+        let parsedFile = JSON.parse(jsonfile);
+        let meals = parsedFile.meals;
+        let newArr = []
+        for(let meal of meals){
+            let tempArr = meal.ingredient.map(function(x){ return x.toLowerCase() })
+            if(tempArr.includes(tag) == true){
+                newArr.push(meal);
+            }
+        }
+        console.log(newArr.length);
+        if(newArr.length == 0){
+            response.status(201).json("sorry");
+        }else{
+            response.status(201).json(newArr)
+        }
+    }else{
+        response.redirect("/meals");
+
+    }
+
+});

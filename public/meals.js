@@ -71,3 +71,41 @@ function getGreatestTime(instuctionsAndTime){
     return numHolder;
 
 }
+
+// document.getElementById("search").style.cssFloat = "right";
+
+
+function runScript(e) {
+    //See notes about 'which' and 'key'
+    if (e.keyCode == 13) {
+        var tb = document.getElementById("searchInput");
+        document.getElementById("noResultsDiv").innerHTML = "";
+        getMealsByTag(tb.value)
+        // console.log("enter was hit")
+        // eval(tb.value);
+        return false;
+    }
+}
+
+function getMealsByTag(tag){
+    fetch("/search/?tag="+tag, {method: 'POST'}).then(function (response) {
+        response.json().then(function (json){
+            if(json == "sorry"){
+                displaySorry();
+            }else{
+            displayMeals(json);
+            }
+        });
+    }).catch(function (err) {console.error(err)});
+
+}
+
+function displaySorry(){
+    document.getElementById("noResultsDiv").innerHTML = "";
+    let div = document.getElementById("noResultsDiv");
+    div.style.padding ="0px";
+    div.style.margin = "0px";
+    let h2 = document.createElement("h2");
+    h2.innerHTML = "Sorry no results found";
+    div.appendChild(h2);
+}
