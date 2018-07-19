@@ -40,3 +40,14 @@ function addInstructionAndTime(num){
 
 
 }
+
+function removeInstructionAndTime(){
+    let form = document.getElementById("mealCreator");
+    form.childNodes()
+    form.removeChild()
+    form.removeChild()
+    form.removeChild()
+    form.removeChild()
+
+
+}
