@@ -15,7 +15,7 @@
                     "ready": false
                 },
                 {
-                    "instruction": "put chicken in the oven",
+                    "instruction": "Put chicken in the oven",
                     "time": 50,
                     "ready": false
                 },
@@ -35,7 +35,7 @@
                     "ready": false
                 },
                 {
-                    "instruction": "Take potatoe and chciken out of oven",
+                    "instruction": "Take potatoe and chicken out of oven",
                     "time": 5,
                     "ready": false
                 },
@@ -49,34 +49,158 @@
         {
             "title": "Bacon Sarnie",
             "ingredient": [
-                "bacon",
-                " bread",
-                " butter"
+                "Bacon",
+                "Bread",
+                "Butter"
             ],
             "img": "https://londontheinside.com/wp-content/uploads/2015/02/bacon_sarnie.jpg",
             "instructionsAndTime": [
                 {
-                    "instruction": "slice bread",
+                    "instruction": "Slice bread",
                     "time": 9,
                     "ready": false
                 },
                 {
-                    "instruction": "add oil to pan and put bacon in",
+                    "instruction": "Add oil to pan and put bacon in",
                     "time": 8,
                     "ready": false
                 },
                 {
-                    "instruction": "turn bacon over",
+                    "instruction": "Turn bacon over",
                     "time": 4,
                     "ready": false
                 },
                 {
-                    "instruction": "butter bread",
+                    "instruction": "Butter bread",
                     "time": 2,
                     "ready": false
                 },
                 {
-                    "instruction": "add bacon to bread",
+                    "instruction": "Add bacon to bread",
+                    "time": 0,
+                    "ready": false
+                }
+            ]
+        },
+        {
+            "title": "Chicken Pesto Pasta",
+            "ingredient": [
+                "Chicken",
+                "Pesto",
+                "Pasta",
+                "Salt",
+                "Black Pepper",
+                "Olive oil",
+                "Cherry Tomatoes",
+                "Asparagus"
+            ],
+            "img": "https://gimmedelicious.com/wp-content/uploads/2016/10/pestopasta-10-of-12.jpg",
+            "instructionsAndTime": [
+                {
+                    "instruction": "Preheat oven to 425 degrees F. Lightly oil a baking sheet or coat with nonstick spray",
+                    "time": 26,
+                    "ready": false
+                },
+                {
+                    "instruction": "Fill a large pot with water and 1 table spoon of salt, heat it on the stove till boiling",
+                    "time": 25,
+                    "ready": false
+                },
+                {
+                    "instruction": "Add pasta into the pot with boiling water",
+                    "time": 17,
+                    "ready": false
+                },
+                {
+                    "instruction": "Place asparagus in a single layer onto the prepared baking sheet. Drizzle with 2 tablespoons olive oil; season with salt and pepper, to taste. Gently toss to combine. Place into oven and roast for 10 minutes, or until tender but crisp.",
+                    "time": 16,
+                    "ready": false
+                },
+                {
+                    "instruction": "Drain the large pot and put pasta to the side",
+                    "time": 7,
+                    "ready": false
+                },
+                {
+                    "instruction": "Remove asparagus from the oven and let it cool down",
+                    "time": 6,
+                    "ready": false
+                },
+                {
+                    "instruction": "Heat remaining 1 tablespoon olive oil in a large skillet over medium heat",
+                    "time": 5,
+                    "ready": false
+                },
+                {
+                    "instruction": "Season chicken with salt and pepper, to taste. Add to skillet and cook until golden, about 4 minutes; set aside.",
+                    "time": 4,
+                    "ready": false
+                },
+                {
+                    "instruction": "Cut asparagus into cutting into 1-inch pieces",
+                    "time": 3,
+                    "ready": false
+                },
+                {
+                    "instruction": "Remove chicken from skillet and put to the side",
+                    "time": 1,
+                    "ready": false
+                },
+                {
+                    "instruction": "In a large bowl, combine asparagus, pasta, chicken, tomatoes and pesto",
+                    "time": 0,
+                    "ready": false
+                }
+            ]
+        },
+        {
+            "title": "Cheesy BBQ Chicken",
+            "ingredient": [
+                "Chicken Drumsticks",
+                "Barbecue glaze",
+                "Cheddar cheese",
+                "Ground Black Pepper",
+                "Salt"
+            ],
+            "img": "https://www.floatingkitchen.net/wp-content/uploads/2015/06/Watermelon-BBQ-Chicken-3.jpg",
+            "instructionsAndTime": [
+                {
+                    "instruction": "Preheat oven to 220 degrees C",
+                    "time": 33,
+                    "ready": false
+                },
+                {
+                    "instruction": "Take chicken out of packaging and rinse it",
+                    "time": 32,
+                    "ready": false
+                },
+                {
+                    "instruction": "Season chicken with salt and pepper, to taste and add",
+                    "time": 30,
+                    "ready": false
+                },
+                {
+                    "instruction": "Marinate chicken with BBQ glaze",
+                    "time": 28,
+                    "ready": false
+                },
+                {
+                    "instruction": "Put chicken wings on tray and put into oven",
+                    "time": 27,
+                    "ready": false
+                },
+                {
+                    "instruction": "Take chicken out of oven and sprinkle with cheese",
+                    "time": 12,
+                    "ready": false
+                },
+                {
+                    "instruction": "Put chicken back into oven",
+                    "time": 10,
+                    "ready": false
+                },
+                {
+                    "instruction": "Remove chicken from oven and allow to cool down for 5 minutes",
                     "time": 0,
                     "ready": false
                 }
